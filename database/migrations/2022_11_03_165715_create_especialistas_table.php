@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('Finicio');
             $table->string('Ffin');
             $table->string('Fpoliza');
-            $table->string('correo');
+            $table->string('Correo');
             $table->string('Telefono');
             $table->string('Estado');
             $table->timestamps();

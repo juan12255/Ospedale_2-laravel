@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Alianzas;
 use Illuminate\Http\Request;
 
-class AlianzasController extends Controller
+class AlianzaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AlianzasController extends Controller
      */
     public function index()
     {
-        //
+        return view('Alianzas.index');
     }
 
     /**

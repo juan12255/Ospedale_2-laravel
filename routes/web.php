@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AlianzaController;
+use App\Http\Controllers\EspecialistaController;
+use App\Http\Controllers\UsuarioController;
+use App\Models\Alianza;
+use App\Models\Especialista;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +19,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/Alianzas',AlianzaController::class);
+Route::resource('/Especialistas',EspecialistaController::class);
+Route::resource('/Usuarios',UsuarioController::class);

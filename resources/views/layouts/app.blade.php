@@ -30,7 +30,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @guest
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Usuarios.index') }}">{{ __('Usuarios') }}</a>
+                            </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -49,6 +60,9 @@
                                 </li>
                             @endif
                         @else
+                        
+                           
+                        <button ion-icon name="search">buscar</button>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -66,6 +80,7 @@
                                     </form>
                                 </div>
                             </li>
+                         
                         @endguest
                     </ul>
                 </div>

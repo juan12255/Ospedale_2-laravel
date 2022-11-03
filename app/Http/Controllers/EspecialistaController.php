@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Especialistas;
+use App\Models\especialista;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
-class EspecialistasController extends Controller
+class EspecialistaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class EspecialistasController extends Controller
      */
     public function index()
     {
-        //
+        $especialistas = especialista::all();
+        return view('Especialistas.index', compact('Especialistas'));
     }
 
     /**
@@ -24,7 +26,8 @@ class EspecialistasController extends Controller
      */
     public function create()
     {
-        //
+        $especialista = new especialista();
+        return view('Especialistas.create', compact('Especialistas'));
     }
 
     /**
@@ -44,9 +47,9 @@ class EspecialistasController extends Controller
      * @param  \App\Models\Especialistas  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function show(Especialistas $especialistas)
+    public function show(Especialista $especialistas)
     {
-        //
+        return view('Especialistas.show', compact('Especialistas'));
     }
 
     /**
@@ -55,9 +58,9 @@ class EspecialistasController extends Controller
      * @param  \App\Models\Especialistas  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Especialistas $especialistas)
+    public function edit(Especialista $especialistas)
     {
-        //
+        return view('Especialistas.edit', compact('especialista'));
     }
 
     /**
@@ -67,9 +70,17 @@ class EspecialistasController extends Controller
      * @param  \App\Models\Especialistas  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especialistas $especialistas)
+    public function update(Request $request, Especialista $especialistas)
     {
-        //
+        $especialistas->Especialidad=$request->Especialidad;
+        $especialistas->Nombre=$request->Nombre;
+        $especialistas->Documento=$request->Documento;
+        $especialistas->Correo=$request->Correo;
+        $especialistas->Telefono=$request->Telefono;
+        $especialistas->Estado=$request->Estado;
+        $especialistas->save();
+        session()->flash("flash.banner","Usuario Actualizado Satisfactoriamente");
+        return Redirect::route("Especialistas.index");
     }
 
     /**
@@ -78,8 +89,10 @@ class EspecialistasController extends Controller
      * @param  \App\Models\Especialistas  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Especialistas $especialistas)
+    public function destroy(Especialista $especialistas)
     {
-        //
+        $especialistas->delete();
+        session()->flash("flash.banner", "Especialista Eliminao Satisfactoriamente");
+        return Redirect::route("Especialistas.index");
     }
 }

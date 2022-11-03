@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
 
-class UsuariosController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        //
+        return view('Usuarios.index');
     }
 
     /**
