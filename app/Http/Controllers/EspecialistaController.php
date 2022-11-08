@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\especialista;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use PhpParser\Node\Expr\New_;
 
 class EspecialistaController extends Controller
 {
@@ -16,7 +17,7 @@ class EspecialistaController extends Controller
     public function index()
     {
         $especialistas = especialista::all();
-        return view('Especialistas.index', compact('Especialistas'));
+        return view('Especialistas.index', compact('especialistas'));
     }
 
     /**
@@ -27,7 +28,7 @@ class EspecialistaController extends Controller
     public function create()
     {
         $especialista = new especialista();
-        return view('Especialistas.create', compact('Especialistas'));
+        return view('Especialistas.create', compact('especialista'));
     }
 
     /**
@@ -38,7 +39,16 @@ class EspecialistaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $especialistas=New Especialista();
+        $especialistas->Especialidad=$request->Especialidad;
+        $especialistas->Nombre=$request->Nombre;
+        $especialistas->Documento=$request->Documento;
+        $especialistas->Correo=$request->Correo;
+        $especialistas->Telefono=$request->Telefono;
+        $especialistas->Estado=$request->Estado;
+        $especialistas->save();
+        session()->flash("flash.banner","Especialista Actualizado Satisfactoriamente");
+        return Redirect::route("Especialistas.index");
     }
 
     /**
@@ -49,7 +59,7 @@ class EspecialistaController extends Controller
      */
     public function show(Especialista $especialistas)
     {
-        return view('Especialistas.show', compact('Especialistas'));
+        return view('Especialistas.show', compact('especialista'));
     }
 
     /**
@@ -79,7 +89,7 @@ class EspecialistaController extends Controller
         $especialistas->Telefono=$request->Telefono;
         $especialistas->Estado=$request->Estado;
         $especialistas->save();
-        session()->flash("flash.banner","Usuario Actualizado Satisfactoriamente");
+        session()->flash("flash.banner","Especialista Actualizado Satisfactoriamente");
         return Redirect::route("Especialistas.index");
     }
 

@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                     <tbody>
-                        @foreach ($Especialistas as $especialista)
+                        @foreach ($especialistas as $especialista)
                         <tr class="border-b">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                 {{$especialista->Especialidad}}               
@@ -43,13 +43,13 @@
                                 {{$especialista->Estado}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <a href="{{route('Especialista.show',$especialista)}}">
+                                <a href="{{route('Especialistas.show',$especialista)}}">
                                     <button>Ver</button>
                                 </a>
-                                <a href="{{route('Especialista.edit',$especialista)}}">
+                                <a href="{{route('Especialistas.edit',$especialista)}}">
                                     <button>Editar</button>
                                 </a>
-                                <form action="{{route('Especialista.destroy', $especialista)}}" method="post" style="display: contents;">
+                                <form action="{{route('Especialistas.destroy', $especialista)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf
                                     <button type="submit">Eliminar</button>

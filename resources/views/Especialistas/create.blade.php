@@ -2,13 +2,13 @@
 
         <div class="" name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Ver Especialista') }}
+                {{ __('Crear Especialista') }}
             </h2>
         <div>
          <div class="py-12">
             <div class="max-w-7xl mx-auto sm:x-6 lg:x-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-7">
-                    <form action="{{ route('usuarios.store') }}" method="post">
+                    <form action="{{ route('Especialistas.store') }}" method="post">
                          @include('Especialistas.form')
                     </form>
                  </div>
