@@ -28,3 +28,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/Alianzas',AlianzaController::class);
 Route::resource('/Especialistas',EspecialistaController::class);
 Route::resource('/Usuarios',UsuarioController::class);
+

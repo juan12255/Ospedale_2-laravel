@@ -63,8 +63,9 @@
                         
                             <li class="nav-item dropdown">
                                 <li>
-                                    <button type="button" class="btn btn-info fill=#212529 position-relative">
-                                        Alertas <span class="position-absolute top-0 start-100 translate-middle   badge border border-dark rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span>
+                                    <button type="button" class="btn btn-info position-relative">
+                                        {{-- <a class="nav-link" href="{{ route('polizas.caducidad') }}">{{ __('Caducidad de polizas') }}</a> --}}
+                                        Alertas <span class="position-absolute top-0 start-100 translate-middle   badge border border-dark rounded-circle bg-danger p-1.3"><span class="visually-hidden">unread messages</span></span>
                                     </button>
                                 </li>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
