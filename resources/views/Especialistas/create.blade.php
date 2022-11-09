@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
     <div>
 
         <div class="" name="header">
@@ -15,3 +17,4 @@
             </div>
         </div>
     </div>
+@endsection
