@@ -25,7 +25,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/Alianzas',AlianzaController::class);
-Route::resource('/Especialistas',EspecialistaController::class);
-Route::resource('/Usuarios',UsuarioController::class);
+Route::resource('/alianzas',AlianzaController::class);
+Route::resource('/especialistas',EspecialistaController::class);
+Route::resource('/usuarios',UsuarioController::class);
 

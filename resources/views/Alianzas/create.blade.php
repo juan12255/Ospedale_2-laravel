@@ -10,7 +10,7 @@
         <div class="max-w-7xl mx-auto sm:x-6 lg:x-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-7">
                 <form action="{{ route('Especialistas.store') }}" method="post">
-                     @include('Alianzas.form')
+                     @include('alianzas.form')
                 </form>
              </div>
         </div>

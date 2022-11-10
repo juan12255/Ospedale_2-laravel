@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Contrataciones') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -33,13 +33,13 @@
                         @guest
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('Alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
+                                <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('Especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
+                                <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('Usuarios.index') }}">{{ __('Usuarios') }}</a>
+                                <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Usuarios') }}</a>
                             </li>
                         @endguest
                     </ul>
@@ -65,7 +65,7 @@
                                 <li>
                                     <button type="button" class="btn btn-info position-relative">
                                         {{-- <a class="nav-link" href="{{ route('polizas.caducidad') }}">{{ __('Caducidad de polizas') }}</a> --}}
-                                        Alertas <span class="position-absolute top-0 start-100 translate-middle   badge border border-dark rounded-circle bg-danger p-1.3"><span class="visually-hidden">unread messages</span></span>
+                                        Alertas <span class="position-absolute top-0 start-100 translate-middle   badge border border-dark rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
                                     </button>
                                 </li>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -90,13 +90,14 @@
                 </div>
             </div>
         </nav>
+        <div class="jumbotron m-0 banner-home">
+            <img class="" style="width: 1903px; height: 1299px" src="https://clinicaospedalemanizales.com/wp-content/uploads/2022/08/fondo-1.png"
+                alt="banner">
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-    <div class="jumbotron m-0 banner-home">
-        <img src="https://clinicaospedalemanizales.com/wp-content/uploads/2022/08/fondo-1.png"
-            alt="banner">
-    </div>
+   
 </body>
 </html>

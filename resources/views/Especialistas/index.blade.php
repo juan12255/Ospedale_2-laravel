@@ -43,13 +43,13 @@
                                 {{$especialista->Estado}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <a href="{{route('Especialistas.show',$especialista)}}">
+                                <a href="{{route('especialistas.show',$especialista)}}">
                                     <button>Ver</button>
                                 </a>
-                                <a href="{{route('Especialistas.edit',$especialista)}}">
+                                <a href="{{route('especialistas.edit',$especialista)}}">
                                     <button>Editar</button>
                                 </a>
-                                <form action="{{route('Especialistas.destroy', $especialista)}}" method="post" style="display: contents;">
+                                <form action="{{route('especialistas.destroy', $especialista)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf
                                     <button type="submit">Eliminar</button>

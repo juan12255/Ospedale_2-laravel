@@ -28,8 +28,8 @@
         </div>
     </div>
                  <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                    <a href="{{ route('Especialistas.index') }}" :active="request()->routeIs('Especialistas.index')">
-                        {{ __('Especialistas.index') }}
+                    <a href="{{ route('especialistas.index') }}" :active="request()->routeIs('especialistas.index')">
+                        {{ __('especialistas.index') }}
                     </a>
                 </button>           
 @endsection

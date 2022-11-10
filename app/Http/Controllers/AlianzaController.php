@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\alianza;
+use App\Models\Alianza;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -16,8 +16,8 @@ class AlianzaController extends Controller
      */
     public function index()
     {
-        $alianzas = alianza::all();
-        return view('Alianzas.index',compact('alianzas'));
+        $alianzas = Alianza::all();
+        return view('alianzas.index',compact('alianzas'));
     }
 
     /**
@@ -28,7 +28,7 @@ class AlianzaController extends Controller
     public function create()
     {
         $alianza = new Alianza();
-        return View('Alianzas.create',compact('alianza'));
+        return View('alianzas.create',compact('alianza'));
     }
 
     /**
@@ -52,37 +52,38 @@ class AlianzaController extends Controller
         $alianza->Telefono=$request->Telefono;
         $alianza->Supervisor=$request->Supervisor;
         $alianza->EstadoA=$request->EstadoA;
+        $alianza->save();
         session()->flash("flash.banner","Alianza creada Satisfactoriamente");
-        return Redirect::route("Alianzas.index");
+        return Redirect::route("alianzas.index");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\alianza  $alianzas
+     * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
-    public function show(alianza $alianza)
+    public function show(Alianza $alianza)
     {
-        return view('Alianzas.show', compact('alianza'));
+        return view('alianzas.show', compact('alianza'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\alianza  $alianzas
+     * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
     public function edit(Alianza $alianza)
     {
-        return view('Alianzas.edit',compact('alianza'));
+        return view('alianzas.edit',compact('alianza'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\alianza  $alianzas
+     * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Alianza $alianza)
@@ -99,20 +100,21 @@ class AlianzaController extends Controller
         $alianza->Telefono=$request->Telefono;
         $alianza->Supervisor=$request->Supervisor;
         $alianza->EstadoA=$request->EstadoA;
+        $alianza->save();
         session()->flash("flash.banner","Alianza creada Satisfactoriamente");
-        return Redirect::route("Alianzas.index");
+        return Redirect::route("alianzas.index");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\alianza  $alianzas
+     * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(alianza $alianza)
+    public function destroy(Alianza $alianza)
     {
         $alianza->delete();
         session()->flash("flash.banner","Alianza eliminada Satisfactoriamente");
-        return Redirect::route("Alianzas.index");
+        return Redirect::route("alianzas.index");
     }
 }

@@ -43,13 +43,13 @@
                                 {{$alianza->EstadoA}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <a href="{{route('Alianzas.show',$alianza)}}">
+                                <a href="{{route('alianzas.show',$alianza)}}">
                                     <button>Ver</button>
                                 </a>
-                                <a href="{{route('Alianzas.edit',$alianza)}}">
+                                <a href="{{route('alianzas.edit',$alianza)}}">
                                     <button>Editar</button>
                                 </a>
-                                <form action="{{route('Alianzas.destroy', $alianza)}}" method="post" style="display: contents;">
+                                <form action="{{route('alianzas.destroy', $alianza)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf
                                     <button type="submit">Eliminar</button>

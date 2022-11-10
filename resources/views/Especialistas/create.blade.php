@@ -11,7 +11,7 @@
             <div class="max-w-7xl mx-auto sm:x-6 lg:x-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-7">
                     <form action="{{ route('Especialistas.store') }}" method="post">
-                         @include('Especialistas.form')
+                         @include('especialistas.form')
                     </form>
                  </div>
             </div>

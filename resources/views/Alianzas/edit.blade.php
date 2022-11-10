@@ -12,7 +12,7 @@
             <form action="{{ route('alianza.update', $alianza) }}" method="POST">
 
              @method('PUT') 
-             @include('Alianzas.form')
+             @include('alianzas.form')
 
             </form>
            
