@@ -22,6 +22,11 @@
                 </thead>
                 <tbody>
                     <tbody>
+                        {{-- <div class="row justify-content-center">
+                        <a href="{{route('alianzas.create')}}">
+                            <button>Crear</button>
+                        </a> --}}
+                    </div>
                         @foreach ($alianzas as $alianza)
                         <tr class="border-b">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -44,15 +49,15 @@
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 <a href="{{route('alianzas.show',$alianza)}}">
-                                    <button>Ver</button>
+                                    <button class="btn btn-dark" >Ver</button>
                                 </a>
                                 <a href="{{route('alianzas.edit',$alianza)}}">
-                                    <button>Editar</button>
+                                    <button class="btn btn-dark">Editar</button>
                                 </a>
                                 <form action="{{route('alianzas.destroy', $alianza)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf
-                                    <button type="submit">Eliminar</button>
+                                    <button type="submit" class="btn btn-dark">Eliminar</button>
                                 </form>
                             </td> 
                             

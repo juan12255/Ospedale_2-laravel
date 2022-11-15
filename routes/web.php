@@ -3,8 +3,8 @@
 use App\Http\Controllers\AlianzaController;
 use App\Http\Controllers\EspecialistaController;
 use App\Http\Controllers\UsuarioController;
-use App\Models\alianza;
-use App\Models\especialista;
+use App\Models\Alianza;
+use App\Models\Especialista;
 use Illuminate\Support\Facades\Route;
 
 /*

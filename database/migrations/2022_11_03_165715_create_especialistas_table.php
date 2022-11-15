@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('especialistas', function (Blueprint $table) {
+            $table->id();
             $table->string('Especialidad');
             $table->string('Nombres');
-            $table->string('Documento')->primary();
-            $table->string('Finicio');
-            $table->string('Ffin');
-            $table->string('Fpoliza');
+            $table->string('Documento')->unique();
+            $table->date('Finicio');
+            $table->date('Ffin');
+            $table->date('Fpoliza');
             $table->string('Correo');
             $table->string('Telefono');
             $table->string('Estado');

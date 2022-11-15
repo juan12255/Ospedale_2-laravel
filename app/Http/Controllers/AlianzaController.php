@@ -101,9 +101,9 @@ class AlianzaController extends Controller
         $alianza->Supervisor=$request->Supervisor;
         $alianza->EstadoA=$request->EstadoA;
         $alianza->save();
-        session()->flash("flash.banner","Alianza creada Satisfactoriamente");
+        session()->flash("flash.banner","Alianza actualizada Satisfactoriamente");
         return Redirect::route("alianzas.index");
-    }
+     }
 
     /**
      * Remove the specified resource from storage.

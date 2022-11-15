@@ -14,14 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('alianzas', function (Blueprint $table) {
+            $table->id();
             $table->string('Razon_Social');
-            $table->string('Nit')->primary();
+            $table->string('Nit')->unique();
             $table->string('Representante');
             $table->string('Objeto');
-            $table->string('FinicioA');
-            $table->string('FfinA');
+            $table->date('FinicioA');
+            $table->date('FfinA');
             $table->string('Prorroga');
-            $table->string('Camara');
+            $table->date('Camara');
             $table->string('Correo');
             $table->string('Telefono');
             $table->string('Supervisor');

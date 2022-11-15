@@ -91,7 +91,7 @@
             </div>
         </nav>
         <div class="jumbotron m-0 banner-home">
-            <img class="" style="width: 1903px; height: 1299px" src="https://clinicaospedalemanizales.com/wp-content/uploads/2022/08/fondo-1.png"
+            <img class="" style="width: 1903px; height: 1299px" src="fondo-1-ospedale.png"
                 alt="banner">
         </div>
         <main class="py-4">
