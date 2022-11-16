@@ -91,7 +91,7 @@
             </div>
         </nav>
         <div class="jumbotron m-0 banner-home">
-            <img class="" style="width: 1903px; height: 1299px" src="fondo-1-ospedale.png"
+            <img class="" style="width: 1903px; height: 1299px" src="img/fondo-1-ospedale.png"
                 alt="banner">
         </div>
         <main class="py-4">

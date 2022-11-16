@@ -22,10 +22,10 @@
                 </thead>
                 <tbody>
                     <tbody>
-                        {{-- <div class="row justify-content-center">
+                        <div class="row justify-content-center">
                         <a href="{{route('alianzas.create')}}">
-                            <button>Crear</button>
-                        </a> --}}
+                            <button class="btn btn-dark">Crear</button>
+                        </a>
                     </div>
                         @foreach ($alianzas as $alianza)
                         <tr class="border-b">

@@ -23,9 +23,9 @@
                 <tbody>
                     <tbody>
 
-                        {{-- <a href="{{route('especialistas.create')}}">
-                            <button>Ver</button>
-                        </a> --}}
+                        <a href="{{route('especialistas.create')}}">
+                            <button  class="btn btn-dark">Crear</button>
+                        </a>
 
                         @foreach ($especialistas as $especialista)
                         <tr class="border-b">

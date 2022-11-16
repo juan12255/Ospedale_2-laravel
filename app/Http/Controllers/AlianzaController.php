@@ -63,9 +63,9 @@ class AlianzaController extends Controller
      * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
-    public function show(Alianza $alianza)
+    public function show(Alianza $alianzas)
     {
-        return view('alianzas.show', compact('alianza'));
+        return view('alianzas.show', compact('alianzas'));
     }
 
     /**
@@ -74,9 +74,9 @@ class AlianzaController extends Controller
      * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alianza $alianza)
+    public function edit(Alianza $alianzas)
     {
-        return view('alianzas.edit',compact('alianza'));
+        return view('alianzas.edit',compact('alianzas'));
     }
 
     /**
@@ -86,21 +86,21 @@ class AlianzaController extends Controller
      * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alianza $alianza)
+    public function update(Request $request, Alianza $alianzas)
     {
-        $alianza->Razon_social=$request->Razon_social;
-        $alianza->Nit=$request->Nit;
-        $alianza->Representante=$request->Representante;
-        $alianza->Objeto=$request->Objeto;
-        $alianza->FinicioA=$request->FinicioA;
-        $alianza->FfinA=$request->FfinA;
-        $alianza->Prorroga=$request->Prorroga;
-        $alianza->Camara=$request->Camara;
-        $alianza->Correo=$request->Correo;
-        $alianza->Telefono=$request->Telefono;
-        $alianza->Supervisor=$request->Supervisor;
-        $alianza->EstadoA=$request->EstadoA;
-        $alianza->save();
+        $alianzas->Razon_social=$request->Razon_social;
+        $alianzas->Nit=$request->Nit;
+        $alianzas->Representante=$request->Representante;
+        $alianzas->Objeto=$request->Objeto;
+        $alianzas->FinicioA=$request->FinicioA;
+        $alianzas->FfinA=$request->FfinA;
+        $alianzas->Prorroga=$request->Prorroga;
+        $alianzas->Camara=$request->Camara;
+        $alianzas->Correo=$request->Correo;
+        $alianzas->Telefono=$request->Telefono;
+        $alianzas->Supervisor=$request->Supervisor;
+        $alianzas->EstadoA=$request->EstadoA;
+        $alianzas->save();
         session()->flash("flash.banner","Alianza actualizada Satisfactoriamente");
         return Redirect::route("alianzas.index");
      }

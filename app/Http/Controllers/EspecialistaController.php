@@ -57,9 +57,9 @@ class EspecialistaController extends Controller
      * @param  \App\Models\Especialista  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function show(Especialista $especialista)
+    public function show(Especialista $especialistas)
     {
-        return view('especialistas.show', compact('especialista'));
+        return view('especialistas.show', compact('especialistas'));
     }
 
     /**
@@ -68,9 +68,9 @@ class EspecialistaController extends Controller
      * @param  \App\Models\Especialista  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Especialista $especialista)
+    public function edit(Especialista $especialistas)
     {
-        return view('especialistas.edit', compact('especialista'));
+        return view('especialistas.edit', compact('especialistas'));
     }
 
     /**
@@ -80,15 +80,15 @@ class EspecialistaController extends Controller
      * @param  \App\Models\Especialista  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especialista $especialista)
+    public function update(Request $request, Especialista $especialistas)
     {
-        $especialista->Especialidad=$request->Especialidad;
-        $especialista->Nombre=$request->Nombre;
-        $especialista->Documento=$request->Documento;
-        $especialista->Correo=$request->Correo;
-        $especialista->Telefono=$request->Telefono;
-        $especialista->Estado=$request->Estado;
-        $especialista->save();
+        $especialistas->Especialidad=$request->Especialidad;
+        $especialistas->Nombre=$request->Nombre;
+        $especialistas->Documento=$request->Documento;
+        $especialistas->Correo=$request->Correo;
+        $especialistas->Telefono=$request->Telefono;
+        $especialistas->Estado=$request->Estado;
+        $especialistas->save();
         session()->flash("flash.banner","Especialista Actualizado Satisfactoriamente");
         return Redirect::route("especialistas.index");
     }
