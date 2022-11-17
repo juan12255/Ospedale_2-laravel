@@ -2,7 +2,7 @@
 @section('content')
 <div class="container" style="width: 700px; height: 1000px">
     <div class="container card my-2">
-        <form class="container" action="{{route('alianzas.store')}}" class="container">
+        <form class="container"  action="{{ route('especialistas.store') }}" class="container">
             <div class="mb-3">
                 <label for="Especialidad" class="form-label"  value="{{ __('Especialidad') }}">Especialidad</label>
                 <input type="text" class="form-control" id="Especialidad"style="width : 250px; heigth : 1px">
@@ -41,9 +41,7 @@
                 <option  value="{{ __('Supervisor') }}">Inactivo</option>
             </select>
             <br>
-            <a href="{{route('especialistas.store')}}">
-                <button  class="btn btn-dark">Guardar</button>
-            </a>
+            <button type="submit" class="btn btn-dark">Guardar</button>
         </form>
     </div>
 </div>

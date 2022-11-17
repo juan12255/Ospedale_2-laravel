@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\usuario;
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UsuarioController extends Controller
 {
@@ -14,7 +16,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view('Usuarios.index');
+        $usuarios = Usuario::all();
+        return view('usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -24,7 +27,8 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $usuario = new Usuario();
+        return view('usuarios.create', compact('usuario'));
     }
 
     /**
@@ -35,7 +39,14 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = new Usuario();
+        $usuario->Documento=$request->Documento;
+        $usuario->Nombre=$request->Nombre;
+        $usuario->Apellido=$request->Apellido;
+        $usuario->Correo=$request->Correo;
+        $usuario->Cargo=$request->Cargo;
+        $usuario->save();
+        return Redirect::route("usuarios.index");
     }
 
     /**
@@ -44,9 +55,9 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuarios $usuarios)
+    public function show(Usuario $usuarios)
     {
-        //
+        return view('usuarios.show', compact('usuarios'));
     }
 
     /**
@@ -55,9 +66,9 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuarios $usuarios)
+    public function edit(Usuario $usuarios)
     {
-        //
+        return view('usuarios.edit', compact('usuarios'));
     }
 
     /**
@@ -67,9 +78,15 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuarios $usuarios)
+    public function update(Request $request, Usuario $usuarios)
     {
-        //
+        $usuarios->Documento=$request->Documento;
+        $usuarios->Nombre=$request->Nombre;
+        $usuarios->Apellido=$request->Apellido;
+        $usuarios->Correo=$request->Correo;
+        $usuarios->Cargo=$request->Cargo;
+        $usuarios->save();
+        return Redirect::route("usuarios.index");
     }
 
     /**
@@ -78,8 +95,9 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuarios $usuarios)
+    public function destroy(Usuario $usuario)
     {
-        //
+        $usuario->delete();
+        return Redirect::route("usuarios.index");
     }
 }

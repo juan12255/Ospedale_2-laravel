@@ -49,7 +49,7 @@
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 <a href="{{route('alianzas.show',$alianza)}}">
-                                    <button class="btn btn-dark" >Ver</button>
+                                    <button class="btn btn-dark">Ver</button>
                                 </a>
                                 <a href="{{route('alianzas.edit',$alianza)}}">
                                     <button class="btn btn-dark">Editar</button>

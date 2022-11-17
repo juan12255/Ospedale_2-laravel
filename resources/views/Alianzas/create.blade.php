@@ -2,7 +2,7 @@
 @section('content')
 <div class="container" style="width: 700px; height: 1000px">
     <div class="container card my-2">
-        <form action="{{route('alianzas.store')}}" class="container">
+        <form  action="{{ route('alianzas.store') }}" class="container">
             <div class="mb-3">
                 <label for="Razon_Social" class="form-label"  value="{{ __('Razon_Social') }}">Razon Social</label>
                 <input type="text" class="form-control" id="Razon_Social"style="width : 250px; heigth : 1px">
