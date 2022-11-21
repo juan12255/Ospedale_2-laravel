@@ -43,7 +43,6 @@ class UsuarioController extends Controller
         $usuario->Documento=$request->Documento;
         $usuario->Nombre=$request->Nombre;
         $usuario->Apellido=$request->Apellido;
-        $usuario->Correo=$request->Correo;
         $usuario->Cargo=$request->Cargo;
         $usuario->save();
         return Redirect::route("usuarios.index");
@@ -83,7 +82,6 @@ class UsuarioController extends Controller
         $usuarios->Documento=$request->Documento;
         $usuarios->Nombre=$request->Nombre;
         $usuarios->Apellido=$request->Apellido;
-        $usuarios->Correo=$request->Correo;
         $usuarios->Cargo=$request->Cargo;
         $usuarios->save();
         return Redirect::route("usuarios.index");

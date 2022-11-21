@@ -25,18 +25,18 @@
             <th>Estado</th>
         </thead>
         <tr>
-            <td>{{$alianzas->Razon_Social}}</td>
-            <td>{{$alianzas->Nit}}</td>
-            <td>{{$alianzas->Representante }}</td>
-            <td>{{$alianzas->Objeto}}</td>
-            <td>{{$alianzas->FinicioA}}</td>
-            <td>{{$alianzas->FfinA}}</td>
-            <td>{{$alianzas->Prorroga}}</td>
-            <td>{{$alianzas->Camara}}</td>
-            <td>{{$alianzas->Correo}}</td>
-            <td>{{$alianzas->Telefono}}</td>
-            <td>{{$alianzas->Supervisor}}</td>
-            <td>{{$alianzas->EstadoA}}</td>
+            <td>{{$alianza->Razon_Social}}</td>
+            <td>{{$alianza->Nit}}</td>
+            <td>{{$alianza->Representante }}</td>
+            <td>{{$alianza->Objeto}}</td>
+            <td>{{$alianza->FinicioA}}</td>
+            <td>{{$alianza->FfinA}}</td>
+            <td>{{$alianza->Prorroga}}</td>
+            <td>{{$alianza->Camara}}</td>
+            <td>{{$alianza->Correo}}</td>
+            <td>{{$alianza->Telefono}}</td>
+            <td>{{$alianza->Supervisor}}</td>
+            <td>{{$alianza->EstadoA}}</td>
         </tr>
     </table>
 </div>

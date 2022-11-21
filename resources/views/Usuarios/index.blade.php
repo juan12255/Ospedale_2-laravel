@@ -38,12 +38,8 @@
                                 {{$usuario->Cargo}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <a href="{{route('usuarios.show',$usuario)}}">
-                                    <button class="btn btn-dark">Ver</button>
-                                </a>
-                                <a href="{{route('usuarios.edit',$usuario)}}">
-                                    <button class="btn btn-dark">Editar</button>
-                                </a>
+                                <a type="button" class="btn btn-dark" href="{{route('usuarios.show',$usuario)}}">Ver</a>
+                                <a type="button" class="btn btn-dark" href="{{route('usuarios.edit',$usuario)}}">Editar</a>
                                 <form action="{{route('usuarios.destroy', $usuario)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf

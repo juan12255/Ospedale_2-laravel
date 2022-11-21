@@ -40,7 +40,7 @@ class AlianzaController extends Controller
     public function store(Request $request)
     {
         $alianza = new Alianza();
-        $alianza->Razon_social=$request->Razon_social;
+        $alianza->Razon_Social=$request->Razon_Social;
         $alianza->Nit=$request->Nit;
         $alianza->Representante=$request->Representante;
         $alianza->Objeto=$request->Objeto;
@@ -63,9 +63,9 @@ class AlianzaController extends Controller
      * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
-    public function show(Alianza $alianzas)
+    public function show(Alianza $alianza)
     {
-        return view('alianzas.show', compact('alianzas'));
+        return view('alianzas.show', compact('alianza'));
     }
 
     /**
@@ -88,7 +88,7 @@ class AlianzaController extends Controller
      */
     public function update(Request $request, Alianza $alianza)
     {
-        $alianza->Razon_social=$request->Razon_social;
+        $alianza->Razon_Social=$request->Razon_Social;
         $alianza->Nit=$request->Nit;
         $alianza->Representante=$request->Representante;
         $alianza->Objeto=$request->Objeto;

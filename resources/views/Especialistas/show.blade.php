@@ -17,20 +17,18 @@
             <th>Fecha fin</th>
             <th>Fecha poliza</th>
             <th>Correo</th>
-            <th>Prorroga</th>
             <th>Telefono</th>
             <th>Estado</th>
         </thead>
         <tr>
-            <td>{{$especialistas->Especialidad}}</td>
-            <td>{{$especialistas->Nombre}}</td>
-            <td>{{$especialistas->Finicio}}</td>
-            <td>{{$especialistas->Ffin}}</td>
-            <td>{{$especialistas->Fpoliza}}</td>
-            <td>{{$especialistas->Correo}}</td>
-            <td>{{$especialistas->Prorroga}}</td>
-            <td>{{$especialistas->Telefono}}</td>
-            <td>{{$especialistas->Estado}}</td>
+            <td>{{$especialista->Especialidad}}</td>
+            <td>{{$especialista->Nombres}}</td>
+            <td>{{$especialista->Finicio}}</td>
+            <td>{{$especialista->Ffin}}</td>
+            <td>{{$especialista->Fpoliza}}</td>
+            <td>{{$especialista->Correo}}</td>
+            <td>{{$especialista->Telefono}}</td>
+            <td>{{$especialista->Estado}}</td>
         </tr>
     </table>
 </div>

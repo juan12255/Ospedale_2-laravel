@@ -48,19 +48,14 @@
                                 {{$especialista->Estado}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <a href="{{route('especialistas.show',$especialista)}}">
-                                    <button class="btn btn-dark">Ver</button>
-                                </a>
-                                <a href="{{route('especialistas.edit',$especialista)}}">
-                                    <button class="btn btn-dark">Editar</button>
-                                </a>
+                                <a type="button" class="btn btn-dark" href="{{route('especialistas.show',$especialista)}}">Ver</a>
+                                <a type="button" class="btn btn-dark" href="{{route('especialistas.edit',$especialista)}}">Editar</a>
                                 <form action="{{route('especialistas.destroy', $especialista)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf
                                     <button type="submit" class="btn btn-dark">Eliminar</button>
                                 </form>
-                            </td> 
-                            
+                            </td>  
                         </tr>
                        @endforeach
                        

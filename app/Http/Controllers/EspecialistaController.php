@@ -41,8 +41,11 @@ class EspecialistaController extends Controller
     {
         $especialista=New Especialista();
         $especialista->Especialidad=$request->Especialidad;
-        $especialista->Nombre=$request->Nombre;
+        $especialista->Nombres=$request->Nombres;
         $especialista->Documento=$request->Documento;
+        $especialista->Finicio=$request->Finicio;
+        $especialista->Ffin=$request->Ffin;
+        $especialista->Fpoliza=$request->Fpoliza;
         $especialista->Correo=$request->Correo;
         $especialista->Telefono=$request->Telefono;
         $especialista->Estado=$request->Estado;
@@ -57,9 +60,9 @@ class EspecialistaController extends Controller
      * @param  \App\Models\Especialista  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function show(Especialista $especialistas)
+    public function show(Especialista $especialista)
     {
-        return view('especialistas.show', compact('especialistas'));
+        return view('especialistas.show', compact('especialista'));
     }
 
     /**
@@ -80,16 +83,15 @@ class EspecialistaController extends Controller
      * @param  \App\Models\Especialista  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especialista $especialistas)
+    public function update(Request $request, Especialista $especialista)
     {
-        $especialistas->Especialidad=$request->Especialidad;
-        $especialistas->Nombre=$request->Nombre;
-        $especialistas->Documento=$request->Documento;
-        $especialistas->Correo=$request->Correo;
-        $especialistas->Telefono=$request->Telefono;
-        $especialistas->Estado=$request->Estado;
-        $especialistas->save();
-        session()->flash("flash.banner","Especialista Actualizado Satisfactoriamente");
+        $especialista->Especialidad=$request->Especialidad;
+        $especialista->Nombres=$request->Nombres;
+        $especialista->Documento=$request->Documento;
+        $especialista->Correo=$request->Correo;
+        $especialista->Telefono=$request->Telefono;
+        $especialista->Estado=$request->Estado;
+        $especialista->save();
         return Redirect::route("especialistas.index");
     }
 
@@ -102,7 +104,6 @@ class EspecialistaController extends Controller
     public function destroy(Especialista $especialista)
     {
         $especialista->delete();
-        session()->flash("flash.banner", "Especialista Eliminao Satisfactoriamente");
         return Redirect::route("especialistas.index");
     }
 }
