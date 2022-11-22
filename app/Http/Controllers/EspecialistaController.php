@@ -50,7 +50,6 @@ class EspecialistaController extends Controller
         $especialista->Telefono=$request->Telefono;
         $especialista->Estado=$request->Estado;
         $especialista->save();
-        session()->flash("flash.banner","Especialista Actualizado Satisfactoriamente");
         return Redirect::route("especialistas.index");
     }
 
@@ -71,9 +70,9 @@ class EspecialistaController extends Controller
      * @param  \App\Models\Especialista  $especialistas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Especialista $especialistas)
+    public function edit(Especialista $especialista)
     {
-        return view('especialistas.edit', compact('especialistas'));
+        return view('especialistas.edit', compact('especialista'));
     }
 
     /**

@@ -74,9 +74,9 @@ class AlianzaController extends Controller
      * @param  \App\Models\Alianza  $alianzas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alianza $alianzas)
+    public function edit(Alianza $alianza)
     {
-        return view('alianzas.edit',compact('alianzas'));
+        return view('alianzas.edit',compact('alianza'));
     }
 
     /**

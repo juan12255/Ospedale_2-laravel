@@ -1,7 +1,6 @@
 @csrf
 @extends('layouts.app')
 @section('content')
-<form  action="{{ route('alianzas.update') }}" method="POST" class="container">
     @csrf
     <div class="block">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -28,6 +27,5 @@
             </div>
         </div>
     </div>
-</form>
 <button type="submit" class="btn btn-dark">Guardar cambios</button>     
 @endsection

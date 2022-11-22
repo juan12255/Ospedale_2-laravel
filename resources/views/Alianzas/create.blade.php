@@ -22,31 +22,31 @@
                 <label for="floatingTextarea"    style="width : 250px; heigth : 1px">objeto del contrato</label>
             </div>
             <div class="mb-3">
-                <label class="form-label" for="exampleCheck1" value="{{ __('FinicioA') }}">Fecha Inicio Contrato</label>
+                <label class="form-label" for="form-control" value="{{ __('FinicioA') }}">Fecha Inicio Contrato</label>
                 <input type="date" class="form-control" id="FinicioA" name="FinicioA" style="width : 250px; heigth : 1px">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="exampleCheck1" value="{{ __('FfinA') }}">Fecha Fin Contrato</label>
+                <label class="form-label" for="form-control" value="{{ __('FfinA') }}">Fecha Fin Contrato</label>
                 <input type="date" class="form-control" id="FfinA" name="FfinA" style="width : 250px; heigth : 1px">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="exampleCheck1" value="{{ __('Prorroga') }}">Prorroga Automatica</label>
+                <label class="form-label" for="form-control" value="{{ __('Prorroga') }}">Prorroga Automatica</label>
                 <input type="text" class="form-control" id="Prorroga" name="Prorroga" style="width : 250px; heigth : 1px">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="exampleCheck1" value="{{ __('Camara') }}">Vigencia Camara de Comercio</label>
+                <label class="form-label" for="form-control" value="{{ __('Camara') }}">Vigencia Camara de Comercio</label>
                 <input type="date" class="form-control"id="Camara" name="Camara" style="width : 250px; heigth : 1px">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="exampleCheck1" value="{{ __('Correo') }}">Correo Electronico</label>
+                <label class="form-label" for="form-control" value="{{ __('Correo') }}">Correo Electronico</label>
                 <input type="email" class="form-control" id="Correo" name="Correo" style="width : 250px; heigth : 1px">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="exampleCheck1" value="{{ __('Telefono') }}">Telefono</label>
+                <label class="form-label" for="form-control" value="{{ __('Telefono') }}">Telefono</label>
                 <input type="number" class="form-control" id="Telefono" name="Telefono" style="width : 250px; heigth : 1px">
             </div>
             <div class="mb-3">
-                <label class="form-check-label" for="exampleCheck1" value="{{ __('Supervisor') }}">Supervisor del Contrato</label>
+                <label class="form-check-label" for="form-control" value="{{ __('Supervisor') }}">Supervisor del Contrato</label>
                 <input type="text" class="form-control" id="Supervisor" name="Supervisor" style="width : 250px; heigth : 1px">
             </div>
             <select class="form-select" aria-label="Default select example" name="EstadoA" style="width : 250px; heigth : 1px">
