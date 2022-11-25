@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('Correo');
             $table->string('Telefono');
             $table->string('Estado');
+            $table->string('Documentos');
             $table->timestamps();
         });
     }

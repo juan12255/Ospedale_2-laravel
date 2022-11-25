@@ -19,6 +19,7 @@
             <th>Correo</th>
             <th>Telefono</th>
             <th>Estado</th>
+            <th>Documentos</th>
         </thead>
         <tr>
             <td>{{$especialista->Especialidad}}</td>
@@ -29,6 +30,7 @@
             <td>{{$especialista->Correo}}</td>
             <td>{{$especialista->Telefono}}</td>
             <td>{{$especialista->Estado}}</td>
+            <td>{{$especialista->Documentos}}</td>
         </tr>
     </table>
 </div>

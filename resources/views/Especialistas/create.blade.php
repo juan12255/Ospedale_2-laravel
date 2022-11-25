@@ -2,7 +2,7 @@
 @section('content')
 <div class="container" style="width: 700px; height: 1000px">
     <div class="container card my-2">
-        <form class="container" action="{{ route('especialistas.store') }}" method="POST" class="container">
+        <form class=" " style="margin: auto; width: 210px;" action="{{ route('especialistas.store') }}" method="POST" class="container">
             @csrf
             <div class="mb-3">
                 <label for="Especialidad" class="form-label"  value="{{ __('Especialidad') }}">Especialidad</label>
@@ -41,6 +41,10 @@
                 <option name="Estado" value="{{ __('Activo') }}">Activo</option>
                 <option name="Estado"  value="{{ __('Inactivo') }}">Inactivo</option>
             </select>
+            <div class="mb-3">
+                <label class="form-check-label" for="form-control" value="{{ __('Documentos') }}">Documentos</label>
+                <input type="file" class="form-control" id="Documentos" name="Documentos" style="width : 250px; heigth : 1px">
+            </div>
             <br>
             <button type="submit" class="btn btn-dark">Guardar</button>
         </form>

@@ -44,6 +44,7 @@ class UsuarioController extends Controller
         $usuario->Nombre=$request->Nombre;
         $usuario->Apellido=$request->Apellido;
         $usuario->Cargo=$request->Cargo;
+        $usuario->Password=$request->Password;
         $usuario->save();
         return Redirect::route("usuarios.index");
     }
@@ -54,9 +55,9 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuario $usuarios)
+    public function show(Usuario $usuario)
     {
-        return view('usuarios.show', compact('usuarios'));
+        return view('usuarios.show', compact('usuario'));
     }
 
     /**
@@ -83,6 +84,7 @@ class UsuarioController extends Controller
         $usuarios->Nombre=$request->Nombre;
         $usuarios->Apellido=$request->Apellido;
         $usuarios->Cargo=$request->Cargo;
+        $usuarios->Password=$request->Password;
         $usuarios->save();
         return Redirect::route("usuarios.index");
     }

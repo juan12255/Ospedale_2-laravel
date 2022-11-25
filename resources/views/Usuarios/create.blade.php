@@ -20,6 +20,10 @@
                 <label class="form-label"  class="form-label" value="{{ __('Cargo') }}">Cargo</label>
                 <input type="text" class="form-control"  name="Cargo" id="Cargo" style="width : 250px; heigth : 1px">
             </div>
+            <div class="mb-3">
+                <label class="form-label"  class="form-label" value="{{ __('Password') }}">Contraseña</label>
+                <input type="password" class="form-control"  name="Password" id="Password" style="width : 250px; heigth : 1px">
+            </div>
             <br>
             <button type="submit" class="btn btn-dark">Guardar</button>
         </form>

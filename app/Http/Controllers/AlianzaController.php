@@ -52,8 +52,8 @@ class AlianzaController extends Controller
         $alianza->Telefono=$request->Telefono;
         $alianza->Supervisor=$request->Supervisor;
         $alianza->EstadoA=$request->EstadoA;
+        $alianza->Documentos=$request->Documentos;
         $alianza->save();
-        session()->flash("flash.banner","Alianza creada Satisfactoriamente");
         return Redirect::route("alianzas.index");
     }
 
@@ -100,8 +100,8 @@ class AlianzaController extends Controller
         $alianza->Telefono=$request->Telefono;
         $alianza->Supervisor=$request->Supervisor;
         $alianza->EstadoA=$request->EstadoA;
+        $alianza->Documentos=$request->Documentos;
         $alianza->save();
-        session()->flash("flash.banner","Alianza actualizada Satisfactoriamente");
         return Redirect::route("alianzas.index");
      }
 
@@ -114,7 +114,6 @@ class AlianzaController extends Controller
     public function destroy(Alianza $alianza)
     {
         $alianza->delete();
-        session()->flash("flash.banner","Alianza eliminada Satisfactoriamente");
         return Redirect::route("alianzas.index");
     }
 }

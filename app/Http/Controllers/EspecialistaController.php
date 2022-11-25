@@ -49,6 +49,7 @@ class EspecialistaController extends Controller
         $especialista->Correo=$request->Correo;
         $especialista->Telefono=$request->Telefono;
         $especialista->Estado=$request->Estado;
+        $especialista->Documentos=$request->Documentos;
         $especialista->save();
         return Redirect::route("especialistas.index");
     }
@@ -90,6 +91,7 @@ class EspecialistaController extends Controller
         $especialista->Correo=$request->Correo;
         $especialista->Telefono=$request->Telefono;
         $especialista->Estado=$request->Estado;
+        $especialista->Documentos=$request->Documentos;
         $especialista->save();
         return Redirect::route("especialistas.index");
     }
