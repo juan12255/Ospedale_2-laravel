@@ -78,14 +78,14 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuarios)
+    public function update(Request $request, Usuario $usuario)
     {
-        $usuarios->Documento=$request->Documento;
-        $usuarios->Nombre=$request->Nombre;
-        $usuarios->Apellido=$request->Apellido;
-        $usuarios->Cargo=$request->Cargo;
-        $usuarios->Password=$request->Password;
-        $usuarios->save();
+        $usuario->Documento=$request->Documento;
+        $usuario->Nombre=$request->Nombre;
+        $usuario->Apellido=$request->Apellido;
+        $usuario->Cargo=$request->Cargo;
+        $usuario->Password=$request->Password;
+        $usuario->save();
         return Redirect::route("usuarios.index");
     }
 

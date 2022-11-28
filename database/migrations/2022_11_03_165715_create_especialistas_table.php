@@ -21,10 +21,9 @@ return new class extends Migration
             $table->date('Finicio');
             $table->date('Ffin');
             $table->date('Fpoliza');
-            $table->string('Correo');
-            $table->string('Telefono');
+            $table->string('Correo')->unique();
+            $table->string('Telefono')->unique();
             $table->string('Estado');
-            $table->string('Documentos');
             $table->timestamps();
         });
     }

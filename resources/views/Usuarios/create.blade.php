@@ -2,7 +2,7 @@
 @section('content')
 <div class="container" style="width: 700px; height: 1000px">
     <div class="container card my-2">
-        <form class="container" action="{{ route('usuarios.store') }}" method="POST" class="container">
+        <form class="" style="margin: auto; width: 210px;"  action="{{ route('usuarios.store') }}" method="POST" class="container">
             @csrf
             <div class="mb-3">
                 <label for="Documento" class="form-label"  value="{{ __('Documento') }}">Documento</label>

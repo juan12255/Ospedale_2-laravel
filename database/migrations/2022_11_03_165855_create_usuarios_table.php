@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Nombre');
             $table->string('Apellido');
             $table->string('Cargo');
-            $table->string('password');
+            $table->string('password')->unique();
             $table->timestamps();
         });
     }

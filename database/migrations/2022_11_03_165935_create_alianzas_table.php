@@ -23,11 +23,10 @@ return new class extends Migration
             $table->date('FfinA');
             $table->string('Prorroga');
             $table->date('Camara');
-            $table->string('Correo');
-            $table->string('Telefono');
+            $table->string('Correo')->unique();
+            $table->string('Telefono')->unique();
             $table->string('Supervisor');
             $table->string('EstadoA');
-            $table->string('Documentos');
             $table->timestamps();
         });
     }

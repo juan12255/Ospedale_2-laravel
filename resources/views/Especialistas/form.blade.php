@@ -1,35 +1,53 @@
-@csrf
 @extends('layouts.app')
 @section('content')
-  
-    <div class="block">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="block">
-                <label for="Especialidad" value="{{ __('Especialidad') }}"> 
-                <input id="Especialidad" class="block mt-1 w-full" type="text" name="Especialidad" :value="old('Especialidad', $especialistas->Especialidad)" required disabled />
-
-                <label for="Nombre" value="{{ __('Nombre') }}"> 
-                <input id="Nombre" class="block mt-1 w-full" type="text" name="Nombre" :value="old('Nombre', $especialistas->Nombre)" required disabled />
-
-                <label for="Documento" value="{{ __('Documento') }}"> 
-                <input id="Documento" class="block mt-1 w-full" type="text" name="Documento" :value="old('Documento', $especialistas->Documento)" required disabled />
-
-                <label for="Correo" value="{{ __('Correo') }}"> 
-                <input id="Correo" class="block mt-1 w-full" type="number" name="Correo" :value="old('Correo', $especialistas->Correo)" required disabled />
-
-                <label for="Telefono" value="{{ __('Telefono') }}"> 
-                <input id="Telefono" class="block mt-1 w-full" type="text" name="Telefono" :value="old('Telefono', $especialistas->Telefono)" required disabled />
-
-                <label for="Estado" value="{{ __('Estado') }}"> 
-                <input id="Estado" class="block mt-1 w-full" type="password" name="Estado" :value="old('Estado', $especialistas->Estado)" required disabled />
-                </div>
+<div class="container" style="width: 700px; height: 1000px">
+    <div class="container card my-2">
+        <form class=" " style="margin: auto; width: 210px;" action="{{ route('especialistas.edit') }}" method="POST" class="container">
+            @csrf
+            <div class="mb-3">
+                <label for="Especialidad" class="form-label"  value="{{ __('Especialidad') }}">Especialidad</label>
+                <input type="text" class="form-control" id="Especialidad" name="Especialidad" style="width : 250px; heigth : 1px">
             </div>
-        </div>
+            <div class="mb-3">
+                <label for="Nombre" class="form-label" value="{{ __('Nombres') }}">Nombres</label>
+                <input type="text" class="form-control" id="Nombre"  name="Nombres" style="width : 250px; heigth : 1px">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="form-control" value="{{ __('Documento') }}">Documento</label>
+                <input type="number" class="form-control" id="Documento"  name="Documento"  style="width : 250px; heigth : 1px">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="form-control" value="{{ __('Finicio') }}">Fecha inicio contrato</label>
+                <input type="date" class="form-control" id="Telefono"  name="Finicio" style="width : 250px; heigth : 1px">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="form-control" value="{{ __('Ffin') }}">Fecha inicio contrato</label>
+                <input type="date" class="form-control" id="Telefono"  name="Ffin" style="width : 250px; heigth : 1px">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="form-control" value="{{ __('Fpoliza') }}">Fecha poliza</label>
+                <input type="date" class="form-control" id="Telefono"  name="Fpoliza" style="width : 250px; heigth : 1px">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="form-control" value="{{ __('Correo') }}">Correo</label>
+                <input type="email" class="form-control" id="Correo"  name="Correo"  style="width : 250px; heigth : 1px">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="form-control" value="{{ __('Telefono') }}">Telefono</label>
+                <input type="number" class="form-control" id="Telefono"  name="Telefono" style="width : 250px; heigth : 1px">
+            </div>
+            <select class="form-select" aria-label="Default select example"  name="Estado" style="width : 250px; heigth : 1px">
+                <option selected>Estado</option>
+                <option name="Estado" value="{{ __('Activo') }}">Activo</option>
+                <option name="Estado"  value="{{ __('Inactivo') }}">Inactivo</option>
+            </select>
+            <div class="mb-3">
+                <label class="form-check-label" for="form-control" value="{{ __('Documentos') }}">Documentos</label>
+                <input type="file" class="form-control" id="Documentos" name="Documentos" style="width : 250px; heigth : 1px">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-dark">Guardar</button>
+        </form>
     </div>
-                 <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                    <a href="{{ route('especialistas.index') }}" :active="request()->routeIs('especialistas.index')">
-                        {{ __('especialistas.index') }}
-                    </a>
-                </button>           
+</div>
 @endsection
