@@ -116,4 +116,6 @@ class AlianzaController extends Controller
         $alianza->delete();
         return Redirect::route("alianzas.index");
     }
+
+
 }
