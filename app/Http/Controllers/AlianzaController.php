@@ -30,6 +30,11 @@ class AlianzaController extends Controller
         $alianza = new Alianza();
         return View('alianzas.create',compact('alianza'));
     }
+    public function excel()
+    {
+        $alianza = new Alianza();
+        return View('alianzas.excel',compact('alianza'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -116,6 +121,5 @@ class AlianzaController extends Controller
         $alianza->delete();
         return Redirect::route("alianzas.index");
     }
-
 
 }

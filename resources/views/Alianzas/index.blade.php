@@ -22,9 +22,12 @@
                 </thead>
                 <tbody>
                     <tbody>
-                        <div class="row justify-content-center">
+                        <div class="justify-content-center">
                         <a href="{{route('alianzas.create')}}">
                             <button class="btn btn-dark">Crear</button>
+                        </a>
+                        <a href="{{route('impoexpo.excel')}}">
+                            <button class="btn btn-dark">Excel</button>
                         </a>
                     </div>
                         @foreach ($alianzas as $alianza)
