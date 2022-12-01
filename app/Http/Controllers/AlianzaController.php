@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\AlianzasExport;
+use App\Imports\AlianzasImport;
 use App\Models\Alianza;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AlianzaController extends Controller
 {
@@ -57,7 +60,6 @@ class AlianzaController extends Controller
         $alianza->Telefono=$request->Telefono;
         $alianza->Supervisor=$request->Supervisor;
         $alianza->EstadoA=$request->EstadoA;
-        $alianza->Documentos=$request->Documentos;
         $alianza->save();
         return Redirect::route("alianzas.index");
     }
@@ -105,7 +107,6 @@ class AlianzaController extends Controller
         $alianza->Telefono=$request->Telefono;
         $alianza->Supervisor=$request->Supervisor;
         $alianza->EstadoA=$request->EstadoA;
-        $alianza->Documentos=$request->Documentos;
         $alianza->save();
         return Redirect::route("alianzas.index");
      }
@@ -120,6 +121,18 @@ class AlianzaController extends Controller
     {
         $alianza->delete();
         return Redirect::route("alianzas.index");
+    }
+
+    public function export()
+    {
+        return Excel::download(new AlianzasExport, 'alianzas.xlsx');
+    }
+
+    public function import() 
+    {
+        Excel::import(new AlianzasImport, 'alianzas.xlsx');
+        
+        return redirect('/')->with('success', 'All good!');
     }
 
 }

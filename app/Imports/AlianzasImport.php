@@ -12,16 +12,21 @@ class AlianzasImport implements ToModel
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    
     public function model(array $row)
     {
         return new Alianza([
             'Razon_Social' =>$row[1],
             'Nit' =>$row[2],
-            'FinicioA' =>$row[3],
-            'FfinA' =>$row[4],
-            'Supervisor' =>$row[5],
-            'EstadoA' =>$row[6],
+            'Representante' =>$row[3],
+            'Objeto' =>$row[4],
+            'FinicioA' =>$row[5],
+            'FfinA' =>$row[6],
+            'Prorroga' =>$row[7],
+            'Camara'  =>$row[8],
+            'Correo' =>$row[9],
+            'Telefono' =>$row[10],
+            'Supervisor' =>$row[11],
+            'EstadoA'  =>$row[12],
         ]);
     }
 }

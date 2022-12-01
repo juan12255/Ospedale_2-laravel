@@ -22,10 +22,12 @@
                 </thead>
                 <tbody>
                     <tbody>
-
-                        <a href="{{route('especialistas.create')}}">
-                            <button  class="btn btn-dark">Crear</button>
-                        </a>
+                        <div class="justify-content-center">
+                            <a href="{{route('especialistas.create')}}">
+                                <button  class="btn btn-dark">Crear</button>
+                                @include('especialistas.export')
+                            </a>
+                        </div>
 
                         @foreach ($especialistas as $especialista)
                         <tr class="border-b">

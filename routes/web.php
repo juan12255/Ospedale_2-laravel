@@ -30,5 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/alianzas',AlianzaController::class);
 Route::resource('/especialistas',EspecialistaController::class);
 Route::resource('/usuarios',UsuarioController::class);
-Route::get('/Alianza/impoexpo', 'ImpoexpoController@importar')->name('impoexpo.excel');
+Route::get('/export', [App\Http\Controllers\AlianzaController::class, 'export'])->name('alianzas.export');
+Route::get('/import', [App\Http\Controllers\AlianzaController::class, 'import'])->name('alianzas.import');
+Route::get('/export', [App\Http\Controllers\EspecialistaController::class, 'export'])->name('especialistas.export');
 

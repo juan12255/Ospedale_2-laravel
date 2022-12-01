@@ -11,8 +11,8 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <form action="{{ route('alianzas.update') }}" method="POST">
              @method('PUT') 
+             @csrf
              @include('alianzas.form')
-
             </form>
            
         </div>

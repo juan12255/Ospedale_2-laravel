@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EspecialistasExport;
 use App\Models\Especialista;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Maatwebsite\Excel\Facades\Excel;
 use PhpParser\Node\Expr\New_;
 
 class EspecialistaController extends Controller
@@ -106,5 +108,10 @@ class EspecialistaController extends Controller
     {
         $especialista->delete();
         return Redirect::route("especialistas.index");
+    }
+
+    public function export()
+    {
+        return Excel::download(new EspecialistasExport, 'especialistas.xlsx');
     }
 }

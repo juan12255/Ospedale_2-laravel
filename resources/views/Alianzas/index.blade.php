@@ -26,9 +26,8 @@
                         <a href="{{route('alianzas.create')}}">
                             <button class="btn btn-dark">Crear</button>
                         </a>
-                        <a href="{{route('impoexpo.excel')}}">
-                            <button class="btn btn-dark">Excel</button>
-                        </a>
+                       @include('alianzas.export')
+                       @include('alianzas.import')
                     </div>
                         @foreach ($alianzas as $alianza)
                         <tr class="border-b">

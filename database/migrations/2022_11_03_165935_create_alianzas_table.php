@@ -27,7 +27,6 @@ return new class extends Migration
             $table->string('Telefono')->unique();
             $table->string('Supervisor');
             $table->string('EstadoA');
-            $table->string('Documentos');
             $table->timestamps();
         });
     }
