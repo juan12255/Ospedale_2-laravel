@@ -128,11 +128,10 @@ class AlianzaController extends Controller
         return Excel::download(new AlianzasExport, 'alianzas.xlsx');
     }
 
-    public function import() 
+    public function import(Request $request) 
     {
-        Excel::import(new AlianzasImport, 'alianzas.xlsx');
-        
-        return redirect('/')->with('success', 'All good!');
+        $file = $request->file('import_file');
+        Excel::import(new AlianzasImport,$file->store('temp'));
+        return redirect('alianzas.index')->with('success', 'All good!');
     }
-
 }

@@ -110,7 +110,7 @@ class EspecialistaController extends Controller
         return Redirect::route("especialistas.index");
     }
 
-    public function export()
+    public function export2()
     {
         return Excel::download(new EspecialistasExport, 'especialistas.xlsx');
     }

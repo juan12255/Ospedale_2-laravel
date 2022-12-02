@@ -25,7 +25,7 @@
                         <div class="justify-content-center">
                             <a href="{{route('especialistas.create')}}">
                                 <button  class="btn btn-dark">Crear</button>
-                                @include('especialistas.export')
+                                @include('especialistas.export2')
                             </a>
                         </div>
 

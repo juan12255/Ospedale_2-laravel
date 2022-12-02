@@ -31,6 +31,6 @@ Route::resource('/alianzas',AlianzaController::class);
 Route::resource('/especialistas',EspecialistaController::class);
 Route::resource('/usuarios',UsuarioController::class);
 Route::get('/export', [App\Http\Controllers\AlianzaController::class, 'export'])->name('alianzas.export');
-Route::get('/import', [App\Http\Controllers\AlianzaController::class, 'import'])->name('alianzas.import');
-Route::get('/export', [App\Http\Controllers\EspecialistaController::class, 'export'])->name('especialistas.export');
+Route::post('/import', [App\Http\Controllers\AlianzaController::class, 'import'])->name('alianzas.import');
+Route::get('/export2', [App\Http\Controllers\EspecialistaController::class, 'export2'])->name('especialistas.export2');
 
