@@ -7,7 +7,7 @@
                     <tr>
                         <th>Especialidad</th>
                     
-                        <th>Nombre</th>
+                        <th>Nombres</th>
             
                         <th>Documento</th>
                 

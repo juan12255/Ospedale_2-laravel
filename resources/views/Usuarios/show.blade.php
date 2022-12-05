@@ -17,10 +17,10 @@
             <th>Cargo</th>
         </thead>
         <tr>
-            <td>{{$usuarios->Documento}}</td>
-            <td>{{$usuarios->Nombre}}</td>
-            <td>{{$usuarios->Apellido}}</td>
-            <td>{{$usuarios->Cargo}}</td>
+            <td>{{$usuario->Documento}}</td>
+            <td>{{$usuario->Nombre}}</td>
+            <td>{{$usuario->Apellido}}</td>
+            <td>{{$usuario->Cargo}}</td>
         </tr>
     </table>
 </div>

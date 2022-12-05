@@ -15,6 +15,15 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        body{
+             background-image: url('https://clinicaospedalemanizales.com/wp-content/uploads/2022/08/fondo-1.png');
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             background-size: cover;
+}
+    </style>
 </head>
 <body>
     <div id="app">
@@ -61,13 +70,7 @@
                             @endif
                         @else
                         
-                            <li class="nav-item dropdown">
-                                <li>
-                                    <button type="button" class="btn btn-info position-relative">
-                                        {{-- <a class="nav-link" href="{{ route('polizas.caducidad') }}">{{ __('Caducidad de polizas') }}</a> --}}
-                                        Alertas <span class="position-absolute top-0 start-100 translate-middle   badge border border-dark rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                                    </button>
-                                </li>
+                            <li class="nav-item dropdown">  
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -90,10 +93,10 @@
                 </div>
             </div>
         </nav>
-        <div class="jumbotron m-0 banner-home">
-            <img class="" style="width: 1903px; height: 1299px" src="img/fondo-1-ospedale.png"
-                alt="banner">
-        </div>
+
+            {{-- <img class="" style="width: 1903px; height: 1299px" src="../img/fondo-1-ospedale.png"
+                alt="banner"> --}}
+        
         <main class="py-4">
             @yield('content')
         </main>
