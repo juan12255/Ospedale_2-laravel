@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\EspecialistasExport;
+use App\Imports\EspecialistasImport;
 use App\Models\Especialista;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -51,7 +52,6 @@ class EspecialistaController extends Controller
         $especialista->Correo=$request->Correo;
         $especialista->Telefono=$request->Telefono;
         $especialista->Estado=$request->Estado;
-        $especialista->Documentos=$request->Documentos;
         $especialista->save();
         return Redirect::route("especialistas.index");
     }
@@ -93,7 +93,6 @@ class EspecialistaController extends Controller
         $especialista->Correo=$request->Correo;
         $especialista->Telefono=$request->Telefono;
         $especialista->Estado=$request->Estado;
-        $especialista->Documentos=$request->Documentos;
         $especialista->save();
         return Redirect::route("especialistas.index");
     }
@@ -113,5 +112,12 @@ class EspecialistaController extends Controller
     public function export2()
     {
         return Excel::download(new EspecialistasExport, 'especialistas.xlsx');
+    }
+
+    public function import2(Request $request) 
+    {
+        $file = $request->file('import_file');
+        Excel::import(new EspecialistasImport,$file->store('temp'));
+        return Redirect::route("especialistas.index");
     }
 }

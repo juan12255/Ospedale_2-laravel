@@ -26,6 +26,7 @@
                             <a href="{{route('especialistas.create')}}">
                                 <button  class="btn btn-dark">Crear</button>
                                 @include('especialistas.export2')
+                                @include('especialistas.import2')
                             </a>
                         </div>
 
@@ -41,7 +42,7 @@
                                 {{$especialista->Documento}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                {{$especialista->correo}}
+                                {{$especialista->Correo}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {{$especialista->Telefono}}
@@ -57,6 +58,7 @@
                                     @csrf
                                     <button type="submit" class="btn btn-dark">Eliminar</button>
                                 </form>
+                                <a type="button" class="btn btn-dark" href="{{route('documentos.index',$especialista->Documento)}}">Documentos</a>
                             </td>  
                         </tr>
                        @endforeach

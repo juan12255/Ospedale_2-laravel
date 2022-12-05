@@ -58,6 +58,7 @@
                                     @csrf
                                     <button type="submit" class="btn btn-dark">Eliminar</button>
                                 </form>
+                                <a type="button" class="btn btn-dark" href="{{route('documentos.index',$alianza->Nit)}}">Documentos</a>
                             </td> 
                             
                         </tr>

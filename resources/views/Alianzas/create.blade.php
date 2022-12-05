@@ -54,10 +54,10 @@
                 <option name="EstadoA"  value="{{ __('Activo') }}">Activo</option>
                 <option name="EstadoA" value="{{ __('Inactivo') }}">Inactivo</option>
             </select>
-            {{-- <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label class="form-check-label" for="form-control" value="{{ __('Documentos') }}">Documentos</label>
                 <input type="file" class="form-control" id="Documentos" name="Documentos" style="width : 250px; heigth : 1px">
-            </div> --}}
+            </div> -->
             <br>
                 <button type="submit" class="btn btn-dark">Guardar</button>
         </form>

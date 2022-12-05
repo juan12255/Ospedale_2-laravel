@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Exports\AlianzasExport;
 use App\Imports\AlianzasImport;
 use App\Models\Alianza;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
@@ -83,7 +82,7 @@ class AlianzaController extends Controller
      */
     public function edit(Alianza $alianza)
     {
-        return view('alianzas.edit',compact('alianza'));
+        return view('alianzas.edit', compact('alianza'));
     }
 
     /**
@@ -132,6 +131,6 @@ class AlianzaController extends Controller
     {
         $file = $request->file('import_file');
         Excel::import(new AlianzasImport,$file->store('temp'));
-        return redirect('alianzas.index')->with('success', 'All good!');
+        return Redirect::route("alianzas.index");
     }
 }
