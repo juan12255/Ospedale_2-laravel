@@ -41,7 +41,7 @@
                     <ul class="navbar-nav me-auto">
                         @guest
                         @else
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
                             </li>
                             <li class="nav-item">
@@ -49,8 +49,20 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Usuarios') }}</a>
-                            </li>
+                            </li> --}}
                         @endguest
+                        @can('vista-admin')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Usuarios') }}</a>
+                        </li>
+                        @endcan
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

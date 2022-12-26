@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\usuario;
-use App\Models\Usuarios;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -16,7 +16,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::all();
+        $usuarios = User::all();
         return view('usuarios.index', compact('usuarios'));
     }
 
@@ -27,7 +27,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        $usuario = new Usuario();
+        $usuario = new User();
         return view('usuarios.create', compact('usuario'));
     }
 
@@ -39,12 +39,13 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->Documento=$request->Documento;
-        $usuario->Nombre=$request->Nombre;
+        $usuario->name=$request->name;
         $usuario->Apellido=$request->Apellido;
+        $usuario->email=$request->email;
         $usuario->Cargo=$request->Cargo;
-        $usuario->Password=$request->Password;
+        $usuario->password = Hash::make($request->password);
         $usuario->save();
         return Redirect::route("usuarios.index");
     }
@@ -55,7 +56,7 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuario $usuario)
+    public function show(User $usuario)
     {
         return view('usuarios.show', compact('usuario'));
     }
@@ -66,7 +67,7 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit(User $usuario)
     {
         return view('usuarios.edit', compact('usuario'));
     }
@@ -78,13 +79,14 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, User $usuario)
     {
         $usuario->Documento=$request->Documento;
-        $usuario->Nombre=$request->Nombre;
+        $usuario->name=$request->name;
         $usuario->Apellido=$request->Apellido;
+        $usuario->email=$request->email;
         $usuario->Cargo=$request->Cargo;
-        $usuario->Password=$request->Password;
+        $usuario->password = Hash::make($request->password);
         $usuario->save();
         return Redirect::route("usuarios.index");
     }
@@ -95,7 +97,7 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(User $usuario)
     {
         $usuario->delete();
         return Redirect::route("usuarios.index");

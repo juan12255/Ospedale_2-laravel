@@ -11,15 +11,17 @@
     </table>
     <table class="table table-striped table-success w-75 mx-auto">
         <thead>
-            <th>Documento</th>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Documento</th>
+            <th>Email</th>
             <th>Cargo</th>
         </thead>
         <tr>
-            <td>{{$usuario->Documento}}</td>
-            <td>{{$usuario->Nombre}}</td>
+            <td>{{$usuario->name}}</td>
             <td>{{$usuario->Apellido}}</td>
+            <td>{{$usuario->Documento}}</td>
+            <td>{{$usuario->email}}</td>
             <td>{{$usuario->Cargo}}</td>
         </tr>
     </table>
