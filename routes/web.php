@@ -28,9 +28,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::resource('/alianzas',AlianzaController::class);
 Route::resource('/especialistas',EspecialistaController::class);
 Route::resource('/usuarios',UsuarioController::class);
+
 Route::get('/export', [App\Http\Controllers\AlianzaController::class, 'export'])->name('alianzas.export');
 Route::post('/import', [App\Http\Controllers\AlianzaController::class, 'import'])->name('alianzas.import');
 
