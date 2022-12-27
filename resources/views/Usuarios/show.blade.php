@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+<a href="{{route('usuarios.index')}}">
+    <button  class="btn btn-dark"> <i class="bi bi-reply-fill"></i></button>
+</a>
+
 <h1 class="text-center my-3">Detalles usuarios</h1>
-<hr>
 <div class="container card my-2">
     <table class="table table-light text-center">
         <tr>

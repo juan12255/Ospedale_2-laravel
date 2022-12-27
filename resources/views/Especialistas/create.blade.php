@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+
+<a href="{{route('especialistas.index')}}">
+    <button  class="btn btn-dark"> <i class="bi bi-reply-fill"></i></button>
+</a>
+
 <div class="container" style="width: 700px; height: 1000px">
     <div class="container card my-2">
         <form class=" " style="margin: auto; width: 210px;" action="{{ route('especialistas.store') }}" method="POST" class="container">

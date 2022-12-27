@@ -18,11 +18,13 @@
                 <label class="form-label"  class="form-label" value="{{ __('Apellido') }}">Apellidos</label>
                 <input type="text" class="form-control"  name="Apellido" id="Apellido"  style="width : 250px; heigth : 1px" required>
             </div>
-     
-            <div class="mb-3">
-                <label class="form-label"  class="form-label" value="{{ __('Cargo') }}">Cargo</label>
-                <input type="text" class="form-control"  name="Cargo" id="Cargo" style="width : 250px; heigth : 1px" required>
-            </div>
+
+            <label class="form-label"  class="form-label" value="{{ __('Cargo') }}">Cargo</label>
+            <select class="form-select" aria-label="Default select example"  name="Cargo" style="width : 250px; heigth : 1px" required>
+                <option selected></option>
+                <option name="Cargo" value="{{ __('Administrador') }}">Administrador</option>
+                <option name="Cargo"  value="{{ __('Consulta') }}">Consulta</option>
+            </select>
 
             <div class="mb-3">
                 <label for="email" class="form-label" value="{{ __('email') }}">Email</label>

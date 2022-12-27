@@ -27,5 +27,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('vista-admin', function ($user) {
             return $user->Cargo == 'Administrador';
         });
+
+        Gate::define('vista-consul', function ($user) {
+            return $user->Cargo == 'Consulta';
+        });
     }
 }

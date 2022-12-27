@@ -25,7 +25,7 @@
                         
                         <div class="justify-content-center">
                                 <a href="{{route('alianzas.create')}}">
-                                    <button class="btn btn-dark">Crear</button>
+                                    <button class="btn btn-dark">Crear <i class="bi bi-clipboard2"></i></button>
                                 </a>
                                     @include('alianzas.export')
                                     @include('alianzas.import')
@@ -51,14 +51,14 @@
                                 {{$alianza->EstadoA}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <a type="button" class="btn btn-dark" href="{{route('alianzas.show',$alianza)}}">Ver</a>
-                                <a type="button" class="btn btn-dark" href="{{route('alianzas.edit',$alianza)}}">Editar</a>
+                                <a type="button" class="btn btn-dark" href="{{route('alianzas.show',$alianza)}}">Ver <i class="bi bi-search"></i></a>
+                                <a type="button" class="btn btn-dark" href="{{route('alianzas.edit',$alianza)}}">Editar <i class="bi bi-file-medical"></i></a>
                                 <form action="{{route('alianzas.destroy', $alianza)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf
-                                    <button type="submit" class="btn btn-dark">Eliminar</button>
+                                    <button type="submit" class="btn btn-dark">Eliminar <i class="bi bi-x-circle"></i></button>
                                 </form>
-                                <a type="button" class="btn btn-dark" href="{{route('documentos.index',$alianza->Nit)}}">Documentos</a>
+                                <a type="button" class="btn btn-dark" href="{{route('documentos.index',$alianza->Nit)}}">Documentos <i class="bi bi-file-earmark-pdf"></i></a>
                             </td> 
                             
                         </tr>

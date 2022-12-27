@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-<a type="button" class="btn btn-dark" href="{{ route('documentos.create', $usuario)}}">Agregar Documento</a>
+<a type="button" class="btn btn-dark" href="{{ route('documentos.create', $usuario)}}">Agregar Documento <i class="bi bi-filetype-docx"></i></a>
     <div class="row justify-content-center">
             <table  colspan="2" class="table table-success table-striped-columns">
                 <thead>

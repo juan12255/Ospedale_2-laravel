@@ -24,7 +24,7 @@
                     <tbody>
                         <div class="justify-content-center">
                             <a href="{{route('especialistas.create')}}">
-                                <button  class="btn btn-dark">Crear</button>
+                                <button  class="btn btn-dark">Crear <i class="bi bi-clipboard2"></i></button>
                                 @include('especialistas.export2')
                                 @include('especialistas.import2')
                             </a>
@@ -51,14 +51,14 @@
                                 {{$especialista->Estado}}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <a type="button" class="btn btn-dark" href="{{route('especialistas.show',$especialista)}}">Ver</a>
-                                <a type="button" class="btn btn-dark" href="{{route('especialistas.edit',$especialista)}}">Editar</a>
+                                <a type="button" class="btn btn-dark" href="{{route('especialistas.show',$especialista)}}">Ver <i class="bi bi-search"></i></a>
+                                <a type="button" class="btn btn-dark" href="{{route('especialistas.edit',$especialista)}}">Editar <i class="bi bi-file-medical"></i></a>
                                 <form action="{{route('especialistas.destroy', $especialista)}}" method="post" style="display: contents;">
                                     @method("DELETE")
                                     @csrf
-                                    <button type="submit" class="btn btn-dark">Eliminar</button>
+                                    <button type="submit" class="btn btn-dark">Eliminar <i class="bi bi-x-circle"></i></button>
                                 </form>
-                                <a type="button" class="btn btn-dark" href="{{route('documentos.index',$especialista->Documento)}}">Documentos</a>
+                                <a type="button" class="btn btn-dark" href="{{route('documentos.index',$especialista->Documento)}}">Documentos <i class="bi bi-file-earmark-pdf"></i></a>
                             </td>  
                         </tr>
                        @endforeach

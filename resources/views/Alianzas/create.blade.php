@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+
+<a href="{{route('alianzas.index')}}">
+    <button  class="btn btn-dark"> <i class="bi bi-reply-fill"></i></button>
+</a>
+
 <div class="container" style="width: 700px; height: 1000px">
     <div class="container card my-2">
         <form  action="{{ route('alianzas.store') }}" method="POST" class="container">
@@ -54,10 +59,6 @@
                 <option name="EstadoA"  value="{{ __('Activo') }}">Activo</option>
                 <option name="EstadoA" value="{{ __('Inactivo') }}">Inactivo</option>
             </select>
-            <!-- <div class="mb-3">
-                <label class="form-check-label" for="form-control" value="{{ __('Documentos') }}">Documentos</label>
-                <input type="file" class="form-control" id="Documentos" name="Documentos" style="width : 250px; heigth : 1px">
-            </div> -->
             <br>
                 <button type="submit" class="btn btn-dark">Guardar</button>
         </form>

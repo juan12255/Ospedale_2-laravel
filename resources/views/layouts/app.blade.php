@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -39,18 +40,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @guest
-                        @else
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Usuarios') }}</a>
-                            </li> --}}
-                        @endguest
                         @can('vista-admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
@@ -62,6 +51,14 @@
                             <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Usuarios') }}</a>
                         </li>
                         @endcan
+                        @can('vista-consul')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
+                        </li>
+                        @endcan
                         
                     </ul>
 
@@ -71,7 +68,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }} <i class="bi bi-person-vcard"></i></a>
                                 </li>
                             @endif
 
@@ -85,6 +82,7 @@
                             <li class="nav-item dropdown">  
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
+                                    <i class="bi bi-person-badge-fill"></i>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

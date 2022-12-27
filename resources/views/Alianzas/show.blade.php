@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+<a href="{{route('alianzas.index')}}">
+    <button  class="btn btn-dark"> <i class="bi bi-reply-fill"></i></button>
+</a>
+
 <h1 class="text-center my-3">Detalles</h1>
-<hr>
 <div class="container card my-2 height:85px">
     <table class="table table-light text-center">
         <tr>
