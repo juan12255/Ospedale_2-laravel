@@ -42,10 +42,10 @@
                     <ul class="navbar-nav me-auto">
                         @can('vista-admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
+                            <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }} <i class="bi bi-house-gear"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
+                            <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }} <i class="bi bi-universal-access"></i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('usuarios.index') }}">{{ __('Usuarios') }}</a>
@@ -53,10 +53,10 @@
                         @endcan
                         @can('vista-consul')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }}</a>
+                            <a class="nav-link" href="{{ route('alianzas.index') }}">{{ __('Terceros Administrativos') }} <i class="bi bi-house-gear"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }}</a>
+                            <a class="nav-link" href="{{ route('especialistas.index') }}">{{ __('Terceros Asistenciales') }} <i class="bi bi-universal-access"></i></a>
                         </li>
                         @endcan
                         

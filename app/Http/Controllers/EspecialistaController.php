@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\EspecialistasExport;
 use App\Imports\EspecialistasImport;
 use App\Models\Especialista;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
@@ -30,8 +31,13 @@ class EspecialistaController extends Controller
      */
     public function create()
     {
+      
         $especialista = new Especialista();
+
+        if (User::find(auth()->id())->Cargo == 'Administrador') 
+        {
         return view('especialistas.create', compact('especialista'));
+        }
     }
 
     /**
@@ -75,7 +81,10 @@ class EspecialistaController extends Controller
      */
     public function edit(Especialista $especialista)
     {
+        if (User::find(auth()->id())->Cargo == 'Administrador') 
+        {
         return view('especialistas.edit', compact('especialista'));
+        }
     }
 
     /**
@@ -105,19 +114,29 @@ class EspecialistaController extends Controller
      */
     public function destroy(Especialista $especialista)
     {
+        
         $especialista->delete();
+        if (User::find(auth()->id())->Cargo == 'Administrador') 
+        {
         return Redirect::route("especialistas.index");
+        }
     }
 
     public function export2()
     {
+        if (User::find(auth()->id())->Cargo == 'Administrador') 
+        {
         return Excel::download(new EspecialistasExport, 'especialistas.xlsx');
+        }
     }
 
     public function import2(Request $request) 
     {
         $file = $request->file('import_file');
         Excel::import(new EspecialistasImport,$file->store('temp'));
+        if (User::find(auth()->id())->Cargo == 'Administrador') 
+        {
         return Redirect::route("especialistas.index");
+        }
     }
 }
